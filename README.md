@@ -1,3 +1,15 @@
+# Kenny (The G) Readme
+
+Jumpstart:
+```
+chmod +x ./jump-start.sh;chmod +x ./env.sh;. ./env.sh;./jump-start.sh  
+```
+
+
+
+
+
+
 # SNIP-20 Reference Implementation
 
 This is an implementation of a [SNIP-20](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-20.md), [SNIP-21](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-21.md), [SNIP-22](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-22.md), [SNIP-23](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-23.md) and [SNIP-24](https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-24.md) compliant token contract.
