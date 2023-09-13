@@ -1,12 +1,19 @@
 # Kenny (The G) Readme
 
-Jumpstart:
+## Jumpstart:
 ```
 chmod +x ./jump-start.sh;chmod +x ./env.sh;. ./env.sh;./jump-start.sh  
 ```
 
-
-
+## Mint
+```
+secretcli tx compute execute $SNIP_20_CONTRACT_ADDRESS "{
+  \"mint\": {
+    \"recipient\": \"secret1nlfhwjhsx9hf6akmcep9p85w9k62vvzvaxemct\",
+    \"amount\": \"10000000000\"
+  }
+}" --from myWallet -y
+```
 
 
 

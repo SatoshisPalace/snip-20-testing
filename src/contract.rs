@@ -156,6 +156,8 @@ fn get_address_position(
 
 #[entry_point]
 pub fn execute(deps: DepsMut, env: Env, info: MessageInfo, msg: ExecuteMsg) -> StdResult<Response> {
+    deps.api.debug("we have a SNIP-20 message~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     let contract_status = CONTRACT_STATUS.load(deps.storage)?;
 
     let mut account_random_pos: Option<usize> = None;
@@ -1335,7 +1337,7 @@ fn try_send_impl(
         decoys,
         account_random_pos,
     )?;
-
+    deps.api.debug("try_send_impl!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     try_add_receiver_api_callback(
         deps.storage,
         messages,

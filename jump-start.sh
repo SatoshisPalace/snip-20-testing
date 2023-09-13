@@ -1,6 +1,6 @@
 #! /bin/bash
 echo "----Cleaning Build----"
-make clean
+# make clean
 echo "----------------------"
 echo "----Building----"
 make build-mainnet
@@ -22,8 +22,13 @@ secretcli tx compute store contract.wasm.gz --gas 5000000 --from $WALLET_NAME --
 sleep 5
 echo "--------------------------"
 echo "----Instantiating Contract----"
-secretcli tx compute instantiate $SNIP_20_DEPLOYMENT_NUM '{"name":"USDC","symbol":"USDC","decimals":18,"prng_seed":"VGhpcyBpcyBhIGJhc2UgNjQgZW5jb2RlZCBzdHJpbmcK","config":{"public_total_supply":true,"enable_deposit":true,"enable_redeem":true,"enable_mint":true,"enable_burn":true}}' --label snip20Contract$SNIP_20_DEPLOYMENT_NUM --from $WALLET_NAME -y
+secretcli tx compute instantiate $DEPLOYMENT_NUM '{"name":"USDC","symbol":"USDC","decimals":18,"prng_seed":"VGhpcyBpcyBhIGJhc2UgNjQgZW5jb2RlZCBzdHJpbmcK","config":{"public_total_supply":true,"enable_deposit":true,"enable_redeem":true,"enable_mint":true,"enable_burn":true}}' --label snip20Contract$DEPLOYMENT_NUM --from $WALLET_NAME -y
 sleep 5
 echo "------------------------------"
-secretcli query compute list-contract-by-code $SNIP_20_DEPLOYMENT_NUM
+secretcli query compute list-contract-by-code $DEPLOYMENT_NUM
 echo "Please set your contract address: export SNIP_20_CONTRACT_ADDRESS="
+echo "------------------------------"
+echo "Code hash:"
+secretcli query compute contract-hash-by-id $DEPLOYMENT_NUM
+echo "Please set your contract code hash: export SNIP_20_CODE_HASH="
+echo "------------------------------"

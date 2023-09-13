@@ -1,6 +1,6 @@
 use cosmwasm_std::{
     entry_point, from_binary, to_binary, Addr, BankMsg, Binary, Coin, CosmosMsg, Deps, DepsMut,
-    Env, MessageInfo, Response, StdError, StdResult, Uint128, WasmMsg,
+    Env, MessageInfo, Response, StdError, StdResult, Uint128, WasmMsg, 
 };
 
 use crate::msg::{CountResponse, ExecuteMsg, InstantiateMsg, QueryMsg, Snip20Msg};
