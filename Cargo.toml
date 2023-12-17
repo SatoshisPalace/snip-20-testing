@@ -27,7 +27,8 @@ overflow-checks = true
 [features]
 # for quicker tests, cargo test --lib
 # for more explicit tests, cargo test --features=backtraces
-#default = ["debug-print"]
+default = []
+testing = []
 backtraces = ["cosmwasm-std/backtraces"]
 
 # debug-print = ["cosmwasm-std/debug-print"]
